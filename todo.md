@@ -1,6 +1,6 @@
 - [ ] Create an optimized SQL query to run
-- [ ] Hide percentages on the chart
+- [ ] Toggle percentages on the chart
 - [ ] Suggest urls to aggregate on
-- [ ] Show in sidebar
+- [ ] Show labels in sidebar
 - [ ] Customize depth
 - [ ] Customize colors
