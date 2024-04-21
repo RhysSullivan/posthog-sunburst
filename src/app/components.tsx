@@ -29,3 +29,11 @@ export const MyResponsiveSunburst = () => (
     }}
   />
 );
+
+export function Sidebar() {
+  return (
+    <div className="max-w-[300px] w-[300px] shrink-0 flex-grow border-r-4">
+      <h1 className="text-4xl">Sidebar</h1>
+    </div>
+  );
+}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MyResponsiveSunburst } from "./components";
+import { MyResponsiveSunburst, Sidebar } from "./components";
 
 // For AO
 // Home page (/)
@@ -11,9 +11,12 @@ import { MyResponsiveSunburst } from "./components";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="w-[800px] h-[800px] text-black">
-        <MyResponsiveSunburst />
+    <main className="flex min-h-screen flex-row">
+      <Sidebar />
+      <div className="flex-grow flex justify-center items-center">
+        <div className="w-[800px] h-[800px] text-black">
+          <MyResponsiveSunburst />
+        </div>
       </div>
     </main>
   );
