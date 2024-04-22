@@ -419,3 +419,256 @@ export const data = {
         }
     ]
 }
+
+export const initialData = [
+    {
+        "source_event": "1_/m/*",
+        "target_event": "2_/c/*",
+        "event_count": 128
+    },
+    {
+        "source_event": "2_/c/*",
+        "target_event": "3_/m/*",
+        "event_count": 78
+    },
+    {
+        "source_event": "1_/m/*",
+        "target_event": "2_https://www.answeroverflow.com",
+        "event_count": 67
+    },
+    {
+        "source_event": "1_https://www.answeroverflow.com",
+        "target_event": "2_/m/*",
+        "event_count": 60
+    },
+    {
+        "source_event": "1_/m/*",
+        "target_event": "2_https://www.answeroverflow.com/new",
+        "event_count": 58
+    },
+    {
+        "source_event": "1_https://www.answeroverflow.com",
+        "target_event": "2_/c/*",
+        "event_count": 50
+    },
+    {
+        "source_event": "1_/c/*",
+        "target_event": "2_/m/*",
+        "event_count": 48
+    },
+    {
+        "source_event": "2_/m/*",
+        "target_event": "3_https://www.answeroverflow.com",
+        "event_count": 36
+    },
+    {
+        "source_event": "2_https://www.answeroverflow.com",
+        "target_event": "3_/m/*",
+        "event_count": 36
+    },
+    {
+        "source_event": "1_https://www.answeroverflow.com",
+        "target_event": "2_https://www.answeroverflow.com/new",
+        "event_count": 35
+    },
+    {
+        "source_event": "3_/m/*",
+        "target_event": "4_/c/*",
+        "event_count": 33
+    },
+    {
+        "source_event": "2_https://www.answeroverflow.com/new",
+        "target_event": "3_/m/*",
+        "event_count": 30
+    },
+    {
+        "source_event": "4_/c/*",
+        "target_event": "5_/m/*",
+        "event_count": 29
+    },
+    {
+        "source_event": "1_https://www.answeroverflow.com",
+        "target_event": "2_https://www.answeroverflow.com/search",
+        "event_count": 21
+    },
+    {
+        "source_event": "2_/m/*",
+        "target_event": "3_/c/*",
+        "event_count": 21
+    },
+    {
+        "source_event": "2_https://www.answeroverflow.com/new",
+        "target_event": "3_https://www.answeroverflow.com",
+        "event_count": 19
+    },
+    {
+        "source_event": "2_https://www.answeroverflow.com/search",
+        "target_event": "3_https://www.answeroverflow.com",
+        "event_count": 17
+    },
+    {
+        "source_event": "3_https://www.answeroverflow.com",
+        "target_event": "4_/m/*",
+        "event_count": 17
+    },
+    {
+        "source_event": "2_/c/*",
+        "target_event": "3_https://www.answeroverflow.com",
+        "event_count": 16
+    },
+    {
+        "source_event": "3_https://www.answeroverflow.com",
+        "target_event": "4_https://www.answeroverflow.com/new",
+        "event_count": 16
+    },
+    {
+        "source_event": "1_/m/*",
+        "target_event": "2_https://www.answeroverflow.com/search",
+        "event_count": 15
+    },
+    {
+        "source_event": "4_/m/*",
+        "target_event": "5_https://www.answeroverflow.com",
+        "event_count": 13
+    },
+    {
+        "source_event": "4_https://www.answeroverflow.com/new",
+        "target_event": "5_/m/*",
+        "event_count": 13
+    },
+    {
+        "source_event": "4_https://www.answeroverflow.com/new",
+        "target_event": "5_https://www.answeroverflow.com",
+        "event_count": 13
+    },
+    {
+        "source_event": "1_https://www.answeroverflow.com",
+        "target_event": "2_https://www.answeroverflow.com/about",
+        "event_count": 12
+    },
+    {
+        "source_event": "1_https://www.answeroverflow.com/about",
+        "target_event": "2_https://www.answeroverflow.com",
+        "event_count": 12
+    },
+    {
+        "source_event": "3_/m/*",
+        "target_event": "4_https://www.answeroverflow.com/new",
+        "event_count": 12
+    },
+    {
+        "source_event": "3_/c/*",
+        "target_event": "4_/m/*",
+        "event_count": 11
+    },
+    {
+        "source_event": "1_https://www.answeroverflow.com/search",
+        "target_event": "2_https://www.answeroverflow.com",
+        "event_count": 10
+    },
+    {
+        "source_event": "2_https://www.answeroverflow.com",
+        "target_event": "3_https://www.answeroverflow.com/search",
+        "event_count": 9
+    },
+    {
+        "source_event": "1_/c/*",
+        "target_event": "2_https://www.answeroverflow.com",
+        "event_count": 8
+    },
+    {
+        "source_event": "2_https://www.answeroverflow.com",
+        "target_event": "3_https://www.answeroverflow.com/new",
+        "event_count": 8
+    },
+    {
+        "source_event": "3_/m/*",
+        "target_event": "4_https://www.answeroverflow.com",
+        "event_count": 8
+    },
+    {
+        "source_event": "4_https://www.answeroverflow.com",
+        "target_event": "5_https://www.answeroverflow.com/new",
+        "event_count": 8
+    },
+    {
+        "source_event": "4_https://www.answeroverflow.com/search",
+        "target_event": "5_https://www.answeroverflow.com",
+        "event_count": 8
+    },
+    {
+        "source_event": "1_https://www.answeroverflow.com",
+        "target_event": "2_https://www.answeroverflow.com/browse",
+        "event_count": 7
+    },
+    {
+        "source_event": "2_https://www.answeroverflow.com",
+        "target_event": "3_https://www.answeroverflow.com/about",
+        "event_count": 7
+    },
+    {
+        "source_event": "2_https://www.answeroverflow.com/search",
+        "target_event": "3_/m/*",
+        "event_count": 7
+    },
+    {
+        "source_event": "3_https://www.answeroverflow.com",
+        "target_event": "4_https://www.answeroverflow.com/search",
+        "event_count": 7
+    },
+    {
+        "source_event": "3_https://www.answeroverflow.com/search",
+        "target_event": "4_https://www.answeroverflow.com",
+        "event_count": 7
+    },
+    {
+        "source_event": "4_https://www.answeroverflow.com",
+        "target_event": "5_/m/*",
+        "event_count": 7
+    },
+    {
+        "source_event": "4_https://www.answeroverflow.com",
+        "target_event": "5_https://www.answeroverflow.com/search",
+        "event_count": 7
+    },
+    {
+        "source_event": "1_https://www.answeroverflow.com",
+        "target_event": "2_https://www.answeroverflow.com/pricing",
+        "event_count": 6
+    },
+    {
+        "source_event": "2_/c/*",
+        "target_event": "3_https://www.answeroverflow.com/search",
+        "event_count": 6
+    },
+    {
+        "source_event": "3_https://www.answeroverflow.com/new",
+        "target_event": "4_https://www.answeroverflow.com",
+        "event_count": 6
+    },
+    {
+        "source_event": "4_/m/*",
+        "target_event": "5_/c/*",
+        "event_count": 6
+    },
+    {
+        "source_event": "1_/c/*",
+        "target_event": "2_https://www.answeroverflow.com/search",
+        "event_count": 5
+    },
+    {
+        "source_event": "1_https://www.answeroverflow.com/new",
+        "target_event": "2_/m/*",
+        "event_count": 5
+    },
+    {
+        "source_event": "2_https://www.answeroverflow.com",
+        "target_event": "3_/c/*",
+        "event_count": 5
+    },
+    {
+        "source_event": "2_https://www.answeroverflow.com/new",
+        "target_event": "3_/c/*",
+        "event_count": 5
+    }
+]

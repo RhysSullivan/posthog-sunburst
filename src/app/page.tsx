@@ -9,6 +9,16 @@ import { MyResponsiveSunburst, Sidebar } from "./components";
 // Other (/*)
 // End
 
+// SQL Query to write:
+// Get session_id, page, timestamp group by session_id
+
+// | row 1
+// | row 2
+// | row 3
+
+// for each row in the result of the above query
+// count the page by some regex
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-row">
