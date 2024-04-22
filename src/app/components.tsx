@@ -1,18 +1,61 @@
 "use client";
 
 import { ResponsiveSunburst } from "@nivo/sunburst";
-import { data as fakeData, initialData } from "./data";
+import { initialData } from "./data";
 import { useQuery } from "@tanstack/react-query";
 
 type QueryResponse = {
-  results: (string | number)[][];
+  results: (string | number | null)[][];
 };
 
-type ParsedResults = {
-  source_event: string;
-  target_event: string;
-  event_count: number;
-};
+interface PathNode {
+  name: string;
+  color: string;
+  children?: PathNode[];
+  count?: number;
+}
+
+const colorMap = {
+  Home: "hsl(128, 36%, 57%)",
+  Search: "hsl(358, 58%, 51%)",
+  Post: "hsl(216, 59%, 58%)",
+  Community: "hsl(23, 72%, 60%)",
+  Other: "hsl(271, 52%, 63%)",
+  End: "hsl(0, 0%, 73%)",
+} as const;
+
+function convertToHierarchy(data: { pathTaken: string; count: number }[]) {
+  const root: PathNode = { name: "Root", children: [] };
+
+  data.forEach((item) => {
+    const path = item.pathTaken.split("->");
+    let currentNode = root;
+
+    for (let i = 0; i < path.length; i++) {
+      const nodeName = path[i];
+      let childNode = currentNode.children?.find(
+        (node) => node.name === nodeName
+      );
+
+      if (!childNode) {
+        childNode = {
+          name: nodeName,
+          color: colorMap[nodeName],
+        };
+        currentNode.children = currentNode.children || [];
+        currentNode.children.push(childNode);
+      }
+
+      if (i === path.length - 1) {
+        childNode.count = item.count;
+      }
+
+      currentNode = childNode;
+    }
+  });
+
+  return root.children; // Assuming there's only one root node
+}
 
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
@@ -27,6 +70,7 @@ export const MyResponsiveSunburst = () => {
     initialData,
     enabled: apiToken !== "" && projectId !== 0,
     queryFn: () =>
+      // TODO: Support custom endpoint
       fetch(`https://us.posthog.com/api/projects/${projectId}/query/`, {
         method: "POST",
         headers: {
@@ -36,8 +80,9 @@ export const MyResponsiveSunburst = () => {
         body: JSON.stringify({
           query: {
             kind: "HogQLQuery",
+            // Result is in format: path_taken, count
             query:
-              "SELECT\n    last_path_key AS source_event,\n    path_key AS target_event,\n    count(*) AS event_count,\n    avg(conversion_time) AS average_conversion_time\nFROM\n    (SELECT\n        person_id,\n        path,\n        conversion_time,\n        event_in_session_index,\n        concat(toString(event_in_session_index), '_', path) AS path_key,\n        if(greater(event_in_session_index, 1), concat(toString(minus(event_in_session_index, 1)), '_', prev_path), NULL) AS last_path_key,\n        path_dropoff_key\n    FROM\n        (SELECT\n            person_id,\n            joined_path_tuple.1 AS path,\n            joined_path_tuple.2 AS conversion_time,\n            joined_path_tuple.3 AS prev_path,\n            event_in_session_index,\n            session_index,\n            arrayPopFront(arrayPushBack(path_basic, '')) AS path_basic_0,\n            arrayMap((x, y) -> if(equals(x, y), 0, 1), path_basic, path_basic_0) AS mapping,\n            arrayFilter((x, y) -> y, time, mapping) AS timings,\n            arrayFilter((x, y) -> y, path_basic, mapping) AS compact_path,\n            indexOf(compact_path, NULL) AS target_index,\n            if(greater(target_index, 0), arraySlice(compact_path, target_index), compact_path) AS filtered_path,\n            arraySlice(filtered_path, 1, 5) AS limited_path,\n            if(greater(target_index, 0), arraySlice(timings, target_index), timings) AS filtered_timings,\n            arraySlice(filtered_timings, 1, 5) AS limited_timings,\n            arrayDifference(limited_timings) AS timings_diff,\n            concat(toString(length(limited_path)), '_', limited_path[-1]) AS path_dropoff_key,\n            arrayZip(limited_path, timings_diff, arrayPopBack(arrayPushFront(limited_path, ''))) AS limited_path_timings\n        FROM\n            (SELECT\n                person_id,\n                path_time_tuple.1 AS path_basic,\n                path_time_tuple.2 AS time,\n                session_index,\n                arrayZip(path_list, timing_list, arrayDifference(timing_list)) AS paths_tuple,\n                arraySplit(x -> if(less(x.3, 1800), 0, 1), paths_tuple) AS session_paths\n            FROM\n                (SELECT\n                    person_id,\n                    groupArray(timestamp) AS timing_list,\n                    groupArray(path_item) AS path_list\n                FROM\n                    (SELECT\n                        events.timestamp,\n                        events.person_id,\n                        ifNull(if(equals(event, '$pageview'), replaceRegexpAll(ifNull(properties.$current_url, ''), '(.)/$', '\\\\1'), event), '') AS path_item_ungrouped,\n                        ['/m/*', '/c/*'] AS groupings,\n                        multiMatchAnyIndex(path_item_ungrouped, ['/m/.*', '/c/.*']) AS group_index,\n                        (if(greater(group_index, 0), groupings[group_index], path_item_ungrouped) AS path_item) AS path_item\n                    FROM\n                        events\n                    WHERE\n                        and(equals(properties.$host, 'www.answeroverflow.com'), and(greaterOrEquals(events.timestamp, toStartOfDay(assumeNotNull(toDateTime('2024-04-14 00:00:00')))), lessOrEquals(events.timestamp, assumeNotNull(toDateTime('2024-04-21 23:59:59')))), equals(event, '$pageview'))\n                    ORDER BY\n                        person_id ASC,\n                        events.timestamp ASC)\n                GROUP BY\n                    person_id)\n            ARRAY JOIN session_paths AS path_time_tuple, arrayEnumerate(session_paths) AS session_index)\n        ARRAY JOIN limited_path_timings AS joined_path_tuple, arrayEnumerate(limited_path_timings) AS event_in_session_index))\nWHERE\n    notEquals(source_event, NULL)\nGROUP BY\n    source_event,\n    target_event\nORDER BY\n    event_count DESC,\n    source_event ASC,\n    target_event ASC\nLIMIT 50",
+              "WITH raw_events as (SELECT\n                        events.timestamp,\n                        events.$session_id,\n                        ifNull(if(equals(event, '$pageview'), replaceRegexpAll(ifNull(properties.$current_url, ''), '(.)/$', '\\\\1'), event), '') AS path_item_ungrouped,\n                        -- These are the labels\n                        ['Post', 'Community', 'Home', 'Search'] AS groupings, \n                        -- This is the matcher\n                        multiMatchAnyIndex(path_item_ungrouped, ['/m/.*', '/c/.*', '.com$', '/search.*']) AS group_index,\n                        (if(greater(group_index, 0), groupings[group_index], 'Other') AS path_item) AS path_item\n                    FROM\n                        events\n                    WHERE\n                        and(\n                            and(greaterOrEquals(events.timestamp, toStartOfDay(assumeNotNull(toDateTime('2024-04-14 00:00:00')))), \n                                lessOrEquals(events.timestamp, assumeNotNull(toDateTime('2024-04-21 23:59:59')))\n                                ), \n                        equals(event, '$pageview'),\n                        equals(properties.$host, 'www.answeroverflow.com')\n                        \n                        )\n                    ORDER BY\n                        $session_id ASC,\n                        events.timestamp ASC\n                    ),\n\ngrouped_events as (SELECT\n                    $session_id,                    \n                    arraySlice(groupArray(path_item), 1 ,5) AS path_list\n                FROM\n                    raw_events\n                GROUP BY\n                    $session_id)\nSELECT concat(arrayStringConcat(path_list, '->'), '->End') AS path_taken, count(*) as count \nFROM grouped_events \nWHERE not(startsWith(path_taken, 'Post'))\ngroup by path_taken \norder by count desc LIMIT 10000",
             filters: { dateRange: { date_from: "-7d" } },
           },
         }),
@@ -45,13 +90,13 @@ export const MyResponsiveSunburst = () => {
         const json = (await res.json()) as QueryResponse;
         return json.results.map((result) => {
           return {
-            source_event: result[0]!,
-            target_event: result[1]!,
-            event_count: result[2]!,
+            pathTaken: result[0]!.toString(),
+            count: Number(result[1]!),
           };
         });
       }),
   });
+
   if (isLoading) {
     // return tailwind loading spinner, take up 100% of div, center
     return (
@@ -60,37 +105,46 @@ export const MyResponsiveSunburst = () => {
       </div>
     );
   }
-  console.log(data);
-  if (data) {
-    return data.map((result) => {
-      return (
-        <>
-          {result.source_event}
-          {result.target_event}
-          {result.event_count}
-        </>
-      );
-    });
-  }
+
+  const converted = convertToHierarchy(data);
   return (
-    <ResponsiveSunburst
-      data={fakeData}
-      id="name"
-      value="loc"
-      cornerRadius={2}
-      borderColor={{ theme: "background" }}
-      colors={{ scheme: "nivo" }}
-      childColor={{
-        from: "color",
-        modifiers: [["brighter", 0.1]],
-      }}
-      enableArcLabels={true}
-      arcLabelsSkipAngle={10}
-      arcLabelsTextColor={{
-        from: "color",
-        modifiers: [["darker", 1.4]],
-      }}
-    />
+    <div className="flex flex-row items-center h-full w-full gap-8">
+      <div className="flex flex-col gap-2">
+        {Object.keys(colorMap).map((label) => {
+          return (
+            <div
+              className="text-center w-full px-4 py-2"
+              key={label}
+              style={{
+                backgroundColor: colorMap[label],
+                color: "white",
+                borderRadius: "0.5rem",
+              }}
+            >
+              {label}
+            </div>
+          );
+        })}
+      </div>
+
+      <ResponsiveSunburst
+        id="name"
+        value="count"
+        data={{
+          children: converted,
+        }}
+        colors={
+          // for the first level, use the colors in order since nivo is weird
+          converted?.map((node) => node.color) || []
+        }
+        childColor={(parent, child) => {
+          return child.data.color;
+        }}
+        borderColor={{ theme: "background" }}
+        enableArcLabels={false}
+        arcLabelsSkipAngle={10}
+      />
+    </div>
   );
 };
 

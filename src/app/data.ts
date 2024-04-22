@@ -1,82 +1,82 @@
-export const data = {
+export const fakeData = {
     "name": "nivo",
-    "color": "hsl(198, 70%, 50%)",
+    "color": "hsl(241, 70%, 50%)",
     "children": [
         {
             "name": "viz",
-            "color": "hsl(118, 70%, 50%)",
+            "color": "#FFFFF",
             "children": [
                 {
                     "name": "stack",
-                    "color": "hsl(342, 70%, 50%)",
+                    "color": "hsl(55, 70%, 50%)",
                     "children": [
                         {
                             "name": "cchart",
-                            "color": "hsl(284, 70%, 50%)",
-                            "loc": 133260
+                            "color": "hsl(249, 70%, 50%)",
+                            "loc": 84303
                         },
                         {
                             "name": "xAxis",
-                            "color": "hsl(135, 70%, 50%)",
-                            "loc": 144873
+                            "color": "hsl(225, 70%, 50%)",
+                            "loc": 74902
                         },
                         {
                             "name": "yAxis",
-                            "color": "hsl(321, 70%, 50%)",
-                            "loc": 19675
+                            "color": "hsl(200, 70%, 50%)",
+                            "loc": 132991
                         },
                         {
                             "name": "layers",
-                            "color": "hsl(323, 70%, 50%)",
-                            "loc": 52994
+                            "color": "hsl(271, 70%, 50%)",
+                            "loc": 159364
                         }
                     ]
                 },
                 {
                     "name": "ppie",
-                    "color": "hsl(359, 70%, 50%)",
+                    "color": "hsl(145, 70%, 50%)",
                     "children": [
                         {
                             "name": "chart",
-                            "color": "hsl(247, 70%, 50%)",
+                            "color": "hsl(72, 70%, 50%)",
                             "children": [
                                 {
                                     "name": "pie",
-                                    "color": "hsl(73, 70%, 50%)",
+                                    "color": "hsl(174, 70%, 50%)",
                                     "children": [
                                         {
                                             "name": "outline",
-                                            "color": "hsl(220, 70%, 50%)",
-                                            "loc": 126501
+                                            "color": "hsl(100, 70%, 50%)",
+                                            "loc": 196722
                                         },
                                         {
                                             "name": "slices",
-                                            "color": "hsl(274, 70%, 50%)",
-                                            "loc": 47216
+                                            "color": "hsl(265, 70%, 50%)",
+                                            "loc": 146436
                                         },
                                         {
                                             "name": "bbox",
-                                            "color": "hsl(55, 70%, 50%)",
-                                            "loc": 7148
+                                            "color": "hsl(359, 70%, 50%)",
+                                            "loc": 18948
                                         }
                                     ]
                                 },
                                 {
                                     "name": "donut",
-                                    "color": "hsl(45, 70%, 50%)",
-                                    "loc": 36494
+                                    "color": "hsl(281, 70%, 50%)",
+                                    "loc": 85181
                                 },
                                 {
                                     "name": "gauge",
-                                    "color": "hsl(52, 70%, 50%)",
-                                    "loc": 147604
+                                    "color": "hsl(327, 70%, 50%)",
+                                    "loc": 103853
                                 }
                             ]
                         },
                         {
                             "name": "legends",
-                            "color": "hsl(182, 70%, 50%)",
-                            "loc": 17773
+                            "color": "hsl(155, 70%, 50%)",
+                            "loc": 95883
                         }
                     ]
                 }
@@ -84,332 +84,332 @@ export const data = {
         },
         {
             "name": "colors",
-            "color": "hsl(192, 70%, 50%)",
+            "color": "hsl(5, 70%, 50%)",
             "children": [
                 {
                     "name": "rgb",
-                    "color": "hsl(58, 70%, 50%)",
-                    "loc": 60076
+                    "color": "hsl(67, 70%, 50%)",
+                    "loc": 40488
                 },
                 {
                     "name": "hsl",
-                    "color": "hsl(224, 70%, 50%)",
-                    "loc": 92531
+                    "color": "hsl(61, 70%, 50%)",
+                    "loc": 183503
                 }
             ]
         },
         {
             "name": "utils",
-            "color": "hsl(324, 70%, 50%)",
+            "color": "hsl(10, 70%, 50%)",
             "children": [
                 {
                     "name": "randomize",
-                    "color": "hsl(19, 70%, 50%)",
-                    "loc": 13673
+                    "color": "hsl(188, 70%, 50%)",
+                    "loc": 42694
                 },
                 {
                     "name": "resetClock",
-                    "color": "hsl(289, 70%, 50%)",
-                    "loc": 127406
+                    "color": "hsl(61, 70%, 50%)",
+                    "loc": 196375
                 },
                 {
                     "name": "noop",
-                    "color": "hsl(38, 70%, 50%)",
-                    "loc": 173735
+                    "color": "hsl(303, 70%, 50%)",
+                    "loc": 69616
                 },
                 {
                     "name": "tick",
-                    "color": "hsl(38, 70%, 50%)",
-                    "loc": 141370
+                    "color": "hsl(88, 70%, 50%)",
+                    "loc": 86688
                 },
                 {
                     "name": "forceGC",
-                    "color": "hsl(276, 70%, 50%)",
-                    "loc": 175110
+                    "color": "hsl(84, 70%, 50%)",
+                    "loc": 30683
                 },
                 {
                     "name": "stackTrace",
-                    "color": "hsl(58, 70%, 50%)",
-                    "loc": 100156
+                    "color": "hsl(152, 70%, 50%)",
+                    "loc": 59828
                 },
                 {
                     "name": "dbg",
-                    "color": "hsl(319, 70%, 50%)",
-                    "loc": 18086
+                    "color": "hsl(279, 70%, 50%)",
+                    "loc": 117088
                 }
             ]
         },
         {
             "name": "generators",
-            "color": "hsl(275, 70%, 50%)",
+            "color": "hsl(182, 70%, 50%)",
             "children": [
                 {
                     "name": "address",
-                    "color": "hsl(132, 70%, 50%)",
-                    "loc": 139083
+                    "color": "hsl(55, 70%, 50%)",
+                    "loc": 1253
                 },
                 {
                     "name": "city",
-                    "color": "hsl(208, 70%, 50%)",
-                    "loc": 99490
+                    "color": "hsl(121, 70%, 50%)",
+                    "loc": 119915
                 },
                 {
                     "name": "animal",
-                    "color": "hsl(190, 70%, 50%)",
-                    "loc": 15712
+                    "color": "hsl(90, 70%, 50%)",
+                    "loc": 154921
                 },
                 {
                     "name": "movie",
-                    "color": "hsl(28, 70%, 50%)",
-                    "loc": 24130
+                    "color": "hsl(195, 70%, 50%)",
+                    "loc": 27566
                 },
                 {
                     "name": "user",
-                    "color": "hsl(210, 70%, 50%)",
-                    "loc": 115903
+                    "color": "hsl(276, 70%, 50%)",
+                    "loc": 70853
                 }
             ]
         },
         {
             "name": "set",
-            "color": "hsl(80, 70%, 50%)",
+            "color": "hsl(129, 70%, 50%)",
             "children": [
                 {
                     "name": "clone",
-                    "color": "hsl(199, 70%, 50%)",
-                    "loc": 8252
+                    "color": "hsl(355, 70%, 50%)",
+                    "loc": 43110
                 },
                 {
                     "name": "intersect",
-                    "color": "hsl(191, 70%, 50%)",
-                    "loc": 71967
+                    "color": "hsl(212, 70%, 50%)",
+                    "loc": 72841
                 },
                 {
                     "name": "merge",
-                    "color": "hsl(54, 70%, 50%)",
-                    "loc": 40525
+                    "color": "hsl(299, 70%, 50%)",
+                    "loc": 72262
                 },
                 {
                     "name": "reverse",
-                    "color": "hsl(126, 70%, 50%)",
-                    "loc": 112424
+                    "color": "hsl(78, 70%, 50%)",
+                    "loc": 12102
                 },
                 {
                     "name": "toArray",
-                    "color": "hsl(23, 70%, 50%)",
-                    "loc": 112001
+                    "color": "hsl(196, 70%, 50%)",
+                    "loc": 111487
                 },
                 {
                     "name": "toObject",
-                    "color": "hsl(190, 70%, 50%)",
-                    "loc": 66298
+                    "color": "hsl(332, 70%, 50%)",
+                    "loc": 78351
                 },
                 {
                     "name": "fromCSV",
-                    "color": "hsl(294, 70%, 50%)",
-                    "loc": 156931
+                    "color": "hsl(226, 70%, 50%)",
+                    "loc": 55950
                 },
                 {
                     "name": "slice",
-                    "color": "hsl(134, 70%, 50%)",
-                    "loc": 79820
+                    "color": "hsl(293, 70%, 50%)",
+                    "loc": 57047
                 },
                 {
                     "name": "append",
-                    "color": "hsl(342, 70%, 50%)",
-                    "loc": 23805
+                    "color": "hsl(36, 70%, 50%)",
+                    "loc": 140660
                 },
                 {
                     "name": "prepend",
-                    "color": "hsl(197, 70%, 50%)",
-                    "loc": 150542
+                    "color": "hsl(109, 70%, 50%)",
+                    "loc": 194208
                 },
                 {
                     "name": "shuffle",
-                    "color": "hsl(70, 70%, 50%)",
-                    "loc": 148464
+                    "color": "hsl(207, 70%, 50%)",
+                    "loc": 80840
                 },
                 {
                     "name": "pick",
-                    "color": "hsl(105, 70%, 50%)",
-                    "loc": 101518
+                    "color": "hsl(186, 70%, 50%)",
+                    "loc": 98062
                 },
                 {
                     "name": "plouc",
-                    "color": "hsl(263, 70%, 50%)",
-                    "loc": 153772
+                    "color": "hsl(52, 70%, 50%)",
+                    "loc": 52561
                 }
             ]
         },
         {
             "name": "text",
-            "color": "hsl(120, 70%, 50%)",
+            "color": "hsl(105, 70%, 50%)",
             "children": [
                 {
                     "name": "trim",
-                    "color": "hsl(83, 70%, 50%)",
-                    "loc": 188091
+                    "color": "hsl(34, 70%, 50%)",
+                    "loc": 34963
                 },
                 {
                     "name": "slugify",
-                    "color": "hsl(233, 70%, 50%)",
-                    "loc": 194938
+                    "color": "hsl(283, 70%, 50%)",
+                    "loc": 98325
                 },
                 {
                     "name": "snakeCase",
-                    "color": "hsl(21, 70%, 50%)",
-                    "loc": 29478
+                    "color": "hsl(243, 70%, 50%)",
+                    "loc": 167821
                 },
                 {
                     "name": "camelCase",
-                    "color": "hsl(10, 70%, 50%)",
-                    "loc": 116084
+                    "color": "hsl(66, 70%, 50%)",
+                    "loc": 86516
                 },
                 {
                     "name": "repeat",
-                    "color": "hsl(46, 70%, 50%)",
-                    "loc": 94654
+                    "color": "hsl(292, 70%, 50%)",
+                    "loc": 73221
                 },
                 {
                     "name": "padLeft",
-                    "color": "hsl(143, 70%, 50%)",
-                    "loc": 104125
+                    "color": "hsl(91, 70%, 50%)",
+                    "loc": 163523
                 },
                 {
                     "name": "padRight",
-                    "color": "hsl(30, 70%, 50%)",
-                    "loc": 34559
+                    "color": "hsl(220, 70%, 50%)",
+                    "loc": 193786
                 },
                 {
                     "name": "sanitize",
-                    "color": "hsl(246, 70%, 50%)",
-                    "loc": 26459
+                    "color": "hsl(298, 70%, 50%)",
+                    "loc": 111629
                 },
                 {
                     "name": "ploucify",
-                    "color": "hsl(296, 70%, 50%)",
-                    "loc": 164192
+                    "color": "hsl(12, 70%, 50%)",
+                    "loc": 101029
                 }
             ]
         },
         {
             "name": "misc",
-            "color": "hsl(74, 70%, 50%)",
+            "color": "hsl(232, 70%, 50%)",
             "children": [
                 {
                     "name": "greetings",
-                    "color": "hsl(231, 70%, 50%)",
+                    "color": "hsl(352, 70%, 50%)",
                     "children": [
                         {
                             "name": "hey",
-                            "color": "hsl(100, 70%, 50%)",
-                            "loc": 85091
+                            "color": "hsl(333, 70%, 50%)",
+                            "loc": 69631
                         },
                         {
                             "name": "HOWDY",
-                            "color": "hsl(242, 70%, 50%)",
-                            "loc": 24645
+                            "color": "hsl(334, 70%, 50%)",
+                            "loc": 80285
                         },
                         {
                             "name": "aloha",
-                            "color": "hsl(2, 70%, 50%)",
-                            "loc": 59985
+                            "color": "hsl(104, 70%, 50%)",
+                            "loc": 132908
                         },
                         {
                             "name": "AHOY",
-                            "color": "hsl(72, 70%, 50%)",
-                            "loc": 65166
+                            "color": "hsl(151, 70%, 50%)",
+                            "loc": 31214
                         }
                     ]
                 },
                 {
                     "name": "other",
-                    "color": "hsl(13, 70%, 50%)",
-                    "loc": 167732
+                    "color": "hsl(7, 70%, 50%)",
+                    "loc": 60006
                 },
                 {
                     "name": "path",
-                    "color": "hsl(160, 70%, 50%)",
+                    "color": "hsl(337, 70%, 50%)",
                     "children": [
                         {
                             "name": "pathA",
-                            "color": "hsl(43, 70%, 50%)",
-                            "loc": 80805
+                            "color": "hsl(21, 70%, 50%)",
+                            "loc": 58015
                         },
                         {
                             "name": "pathB",
-                            "color": "hsl(258, 70%, 50%)",
+                            "color": "hsl(26, 70%, 50%)",
                             "children": [
                                 {
                                     "name": "pathB1",
-                                    "color": "hsl(220, 70%, 50%)",
-                                    "loc": 187528
+                                    "color": "hsl(62, 70%, 50%)",
+                                    "loc": 11373
                                 },
                                 {
                                     "name": "pathB2",
-                                    "color": "hsl(318, 70%, 50%)",
-                                    "loc": 171258
+                                    "color": "hsl(337, 70%, 50%)",
+                                    "loc": 194417
                                 },
                                 {
                                     "name": "pathB3",
-                                    "color": "hsl(49, 70%, 50%)",
-                                    "loc": 38273
+                                    "color": "hsl(272, 70%, 50%)",
+                                    "loc": 80729
                                 },
                                 {
                                     "name": "pathB4",
-                                    "color": "hsl(229, 70%, 50%)",
-                                    "loc": 169229
+                                    "color": "hsl(258, 70%, 50%)",
+                                    "loc": 64161
                                 }
                             ]
                         },
                         {
                             "name": "pathC",
-                            "color": "hsl(86, 70%, 50%)",
+                            "color": "hsl(36, 70%, 50%)",
                             "children": [
                                 {
                                     "name": "pathC1",
-                                    "color": "hsl(148, 70%, 50%)",
-                                    "loc": 81948
+                                    "color": "hsl(63, 70%, 50%)",
+                                    "loc": 130428
                                 },
                                 {
                                     "name": "pathC2",
-                                    "color": "hsl(205, 70%, 50%)",
-                                    "loc": 41614
+                                    "color": "hsl(107, 70%, 50%)",
+                                    "loc": 95978
                                 },
                                 {
                                     "name": "pathC3",
-                                    "color": "hsl(92, 70%, 50%)",
-                                    "loc": 102680
+                                    "color": "hsl(160, 70%, 50%)",
+                                    "loc": 118965
                                 },
                                 {
                                     "name": "pathC4",
-                                    "color": "hsl(46, 70%, 50%)",
-                                    "loc": 147289
+                                    "color": "hsl(218, 70%, 50%)",
+                                    "loc": 11760
                                 },
                                 {
                                     "name": "pathC5",
-                                    "color": "hsl(90, 70%, 50%)",
-                                    "loc": 10558
+                                    "color": "hsl(261, 70%, 50%)",
+                                    "loc": 184103
                                 },
                                 {
                                     "name": "pathC6",
-                                    "color": "hsl(144, 70%, 50%)",
-                                    "loc": 6068
+                                    "color": "hsl(108, 70%, 50%)",
+                                    "loc": 95041
                                 },
                                 {
                                     "name": "pathC7",
-                                    "color": "hsl(135, 70%, 50%)",
-                                    "loc": 124384
+                                    "color": "hsl(199, 70%, 50%)",
+                                    "loc": 4637
                                 },
                                 {
                                     "name": "pathC8",
-                                    "color": "hsl(330, 70%, 50%)",
-                                    "loc": 107049
+                                    "color": "hsl(138, 70%, 50%)",
+                                    "loc": 191250
                                 },
                                 {
                                     "name": "pathC9",
-                                    "color": "hsl(34, 70%, 50%)",
-                                    "loc": 182851
+                                    "color": "hsl(68, 70%, 50%)",
+                                    "loc": 74502
                                 }
                             ]
                         }
@@ -422,253 +422,403 @@ export const data = {
 
 export const initialData = [
     {
-        "source_event": "1_/m/*",
-        "target_event": "2_/c/*",
-        "event_count": 128
+        "pathTaken": "Post->End",
+        "count": 18105
     },
     {
-        "source_event": "2_/c/*",
-        "target_event": "3_/m/*",
-        "event_count": 78
+        "pathTaken": "Home->End",
+        "count": 412
     },
     {
-        "source_event": "1_/m/*",
-        "target_event": "2_https://www.answeroverflow.com",
-        "event_count": 67
+        "pathTaken": "Community->End",
+        "count": 217
     },
     {
-        "source_event": "1_https://www.answeroverflow.com",
-        "target_event": "2_/m/*",
-        "event_count": 60
+        "pathTaken": "Other->End",
+        "count": 149
     },
     {
-        "source_event": "1_/m/*",
-        "target_event": "2_https://www.answeroverflow.com/new",
-        "event_count": 58
+        "pathTaken": "Post->Post->Post->End",
+        "count": 41
     },
     {
-        "source_event": "1_https://www.answeroverflow.com",
-        "target_event": "2_/c/*",
-        "event_count": 50
+        "pathTaken": "Post->Community->Post->End",
+        "count": 39
     },
     {
-        "source_event": "1_/c/*",
-        "target_event": "2_/m/*",
-        "event_count": 48
+        "pathTaken": "Post->Community->End",
+        "count": 39
     },
     {
-        "source_event": "2_/m/*",
-        "target_event": "3_https://www.answeroverflow.com",
-        "event_count": 36
+        "pathTaken": "Post->Post->End",
+        "count": 36
     },
     {
-        "source_event": "2_https://www.answeroverflow.com",
-        "target_event": "3_/m/*",
-        "event_count": 36
+        "pathTaken": "Home->Other->End",
+        "count": 27
     },
     {
-        "source_event": "1_https://www.answeroverflow.com",
-        "target_event": "2_https://www.answeroverflow.com/new",
-        "event_count": 35
+        "pathTaken": "Community->Post->End",
+        "count": 26
     },
     {
-        "source_event": "3_/m/*",
-        "target_event": "4_/c/*",
-        "event_count": 33
+        "pathTaken": "Search->End",
+        "count": 25
     },
     {
-        "source_event": "2_https://www.answeroverflow.com/new",
-        "target_event": "3_/m/*",
-        "event_count": 30
+        "pathTaken": "Post->Home->End",
+        "count": 24
     },
     {
-        "source_event": "4_/c/*",
-        "target_event": "5_/m/*",
-        "event_count": 29
+        "pathTaken": "Home->Post->End",
+        "count": 18
     },
     {
-        "source_event": "1_https://www.answeroverflow.com",
-        "target_event": "2_https://www.answeroverflow.com/search",
-        "event_count": 21
+        "pathTaken": "Home->Community->End",
+        "count": 18
     },
     {
-        "source_event": "2_/m/*",
-        "target_event": "3_/c/*",
-        "event_count": 21
+        "pathTaken": "Post->Search->End",
+        "count": 18
     },
     {
-        "source_event": "2_https://www.answeroverflow.com/new",
-        "target_event": "3_https://www.answeroverflow.com",
-        "event_count": 19
+        "pathTaken": "Post->Other->Post->End",
+        "count": 17
     },
     {
-        "source_event": "2_https://www.answeroverflow.com/search",
-        "target_event": "3_https://www.answeroverflow.com",
-        "event_count": 17
+        "pathTaken": "Post->Other->End",
+        "count": 17
     },
     {
-        "source_event": "3_https://www.answeroverflow.com",
-        "target_event": "4_/m/*",
-        "event_count": 17
+        "pathTaken": "Post->Home->Post->End",
+        "count": 17
     },
     {
-        "source_event": "2_/c/*",
-        "target_event": "3_https://www.answeroverflow.com",
-        "event_count": 16
+        "pathTaken": "Home->Search->End",
+        "count": 16
     },
     {
-        "source_event": "3_https://www.answeroverflow.com",
-        "target_event": "4_https://www.answeroverflow.com/new",
-        "event_count": 16
+        "pathTaken": "Home->Post->Home->End",
+        "count": 14
     },
     {
-        "source_event": "1_/m/*",
-        "target_event": "2_https://www.answeroverflow.com/search",
-        "event_count": 15
+        "pathTaken": "Post->Post->Post->Post->Post->End",
+        "count": 12
     },
     {
-        "source_event": "4_/m/*",
-        "target_event": "5_https://www.answeroverflow.com",
-        "event_count": 13
+        "pathTaken": "Post->Community->Post->Community->Post->End",
+        "count": 10
     },
     {
-        "source_event": "4_https://www.answeroverflow.com/new",
-        "target_event": "5_/m/*",
-        "event_count": 13
+        "pathTaken": "Community->Post->Community->End",
+        "count": 9
     },
     {
-        "source_event": "4_https://www.answeroverflow.com/new",
-        "target_event": "5_https://www.answeroverflow.com",
-        "event_count": 13
+        "pathTaken": "Community->Search->End",
+        "count": 9
     },
     {
-        "source_event": "1_https://www.answeroverflow.com",
-        "target_event": "2_https://www.answeroverflow.com/about",
-        "event_count": 12
+        "pathTaken": "Community->Community->End",
+        "count": 8
     },
     {
-        "source_event": "1_https://www.answeroverflow.com/about",
-        "target_event": "2_https://www.answeroverflow.com",
-        "event_count": 12
+        "pathTaken": "Home->Community->Home->End",
+        "count": 8
     },
     {
-        "source_event": "3_/m/*",
-        "target_event": "4_https://www.answeroverflow.com/new",
-        "event_count": 12
+        "pathTaken": "Home->Search->Home->End",
+        "count": 8
     },
     {
-        "source_event": "3_/c/*",
-        "target_event": "4_/m/*",
-        "event_count": 11
+        "pathTaken": "Home->Other->Home->End",
+        "count": 7
     },
     {
-        "source_event": "1_https://www.answeroverflow.com/search",
-        "target_event": "2_https://www.answeroverflow.com",
-        "event_count": 10
+        "pathTaken": "Home->Post->Home->Post->Home->End",
+        "count": 6
     },
     {
-        "source_event": "2_https://www.answeroverflow.com",
-        "target_event": "3_https://www.answeroverflow.com/search",
-        "event_count": 9
+        "pathTaken": "Post->Search->Post->Search->Post->End",
+        "count": 6
     },
     {
-        "source_event": "1_/c/*",
-        "target_event": "2_https://www.answeroverflow.com",
-        "event_count": 8
+        "pathTaken": "Search->Search->End",
+        "count": 6
     },
     {
-        "source_event": "2_https://www.answeroverflow.com",
-        "target_event": "3_https://www.answeroverflow.com/new",
-        "event_count": 8
+        "pathTaken": "Home->Search->Home->Search->Home->End",
+        "count": 6
     },
     {
-        "source_event": "3_/m/*",
-        "target_event": "4_https://www.answeroverflow.com",
-        "event_count": 8
+        "pathTaken": "Post->Other->Home->End",
+        "count": 5
     },
     {
-        "source_event": "4_https://www.answeroverflow.com",
-        "target_event": "5_https://www.answeroverflow.com/new",
-        "event_count": 8
+        "pathTaken": "Community->Post->Community->Post->Community->End",
+        "count": 5
     },
     {
-        "source_event": "4_https://www.answeroverflow.com/search",
-        "target_event": "5_https://www.answeroverflow.com",
-        "event_count": 8
+        "pathTaken": "Other->Home->End",
+        "count": 5
     },
     {
-        "source_event": "1_https://www.answeroverflow.com",
-        "target_event": "2_https://www.answeroverflow.com/browse",
-        "event_count": 7
+        "pathTaken": "Post->Home->Post->Community->Post->End",
+        "count": 5
     },
     {
-        "source_event": "2_https://www.answeroverflow.com",
-        "target_event": "3_https://www.answeroverflow.com/about",
-        "event_count": 7
+        "pathTaken": "Home->Post->Home->Other->Home->End",
+        "count": 5
     },
     {
-        "source_event": "2_https://www.answeroverflow.com/search",
-        "target_event": "3_/m/*",
-        "event_count": 7
+        "pathTaken": "Community->Home->End",
+        "count": 5
     },
     {
-        "source_event": "3_https://www.answeroverflow.com",
-        "target_event": "4_https://www.answeroverflow.com/search",
-        "event_count": 7
+        "pathTaken": "Post->Search->Post->End",
+        "count": 5
     },
     {
-        "source_event": "3_https://www.answeroverflow.com/search",
-        "target_event": "4_https://www.answeroverflow.com",
-        "event_count": 7
+        "pathTaken": "Community->Community->Community->Community->Community->End",
+        "count": 4
     },
     {
-        "source_event": "4_https://www.answeroverflow.com",
-        "target_event": "5_/m/*",
-        "event_count": 7
+        "pathTaken": "Home->Post->Home->Post->End",
+        "count": 4
     },
     {
-        "source_event": "4_https://www.answeroverflow.com",
-        "target_event": "5_https://www.answeroverflow.com/search",
-        "event_count": 7
+        "pathTaken": "Home->Other->Other->End",
+        "count": 4
     },
     {
-        "source_event": "1_https://www.answeroverflow.com",
-        "target_event": "2_https://www.answeroverflow.com/pricing",
-        "event_count": 6
+        "pathTaken": "Post->Community->Search->End",
+        "count": 4
     },
     {
-        "source_event": "2_/c/*",
-        "target_event": "3_https://www.answeroverflow.com/search",
-        "event_count": 6
+        "pathTaken": "Other->Post->End",
+        "count": 4
     },
     {
-        "source_event": "3_https://www.answeroverflow.com/new",
-        "target_event": "4_https://www.answeroverflow.com",
-        "event_count": 6
+        "pathTaken": "Other->Other->End",
+        "count": 4
     },
     {
-        "source_event": "4_/m/*",
-        "target_event": "5_/c/*",
-        "event_count": 6
+        "pathTaken": "Community->Search->Community->End",
+        "count": 4
     },
     {
-        "source_event": "1_/c/*",
-        "target_event": "2_https://www.answeroverflow.com/search",
-        "event_count": 5
+        "pathTaken": "Post->Other->Home->Other->Post->End",
+        "count": 4
     },
     {
-        "source_event": "1_https://www.answeroverflow.com/new",
-        "target_event": "2_/m/*",
-        "event_count": 5
+        "pathTaken": "Home->Other->Other->Other->End",
+        "count": 3
     },
     {
-        "source_event": "2_https://www.answeroverflow.com",
-        "target_event": "3_/c/*",
-        "event_count": 5
+        "pathTaken": "Post->Post->Post->Post->End",
+        "count": 3
     },
     {
-        "source_event": "2_https://www.answeroverflow.com/new",
-        "target_event": "3_/c/*",
-        "event_count": 5
+        "pathTaken": "Community->Community->Community->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Home->Community->Home->Community->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Home->Search->Post->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Search->Post->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Community->Search->Post->Search->Community->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Post->Other->Search->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Post->Community->Post->Community->Community->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Post->Community->Community->Community->Community->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Post->Other->Post->Other->Post->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Home->Search->Search->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Other->Home->Other->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Home->Other->Post->Other->Post->End",
+        "count": 3
+    },
+    {
+        "pathTaken": "Post->Home->Post->Search->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Community->Search->Post->Search->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Other->Search->Post->Search->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Search->Home->Search->Home->Search->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Search->Home->Search->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Community->Post->Community->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Search->Post->Search->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Search->Other->Search->Home->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Community->Post->Post->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Community->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Other->Post->Community->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Community->Community->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Community->Community->Post->Community->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Search->Community->Search->Post->Search->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Community->Other->Community->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Community->Post->Search->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Home->Post->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Other->Other->Other->Other->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Community->Community->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Community->Post->Community->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Search->Community->Community->Community->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Community->Home->Other->Home->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Search->Post->Search->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Search->Search->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Community->Search->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Home->Other->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Other->Other->Other->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Search->Home->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Community->Post->Post->Post->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Post->Home->Search->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Community->Community->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Home->Post->Other->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Community->Home->Other->Home->Other->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Post->Home->Post->Home->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Other->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Other->Home->Post->Post->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Community->Community->Community->Community->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Other->Search->End",
+        "count": 2
+    },
+    {
+        "pathTaken": "Home->Search->Search->Post->End",
+        "count": 2
     }
 ]
