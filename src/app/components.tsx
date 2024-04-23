@@ -344,7 +344,7 @@ export function MatchPopover(props: {
                   <FormItem>
                     <FormLabel>Label</FormLabel>
                     <FormControl>
-                      <Input placeholder="phx_..." {...field} />
+                      <Input placeholder="Search" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
