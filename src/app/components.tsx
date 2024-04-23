@@ -246,7 +246,7 @@ export const MyResponsiveSunburst = () => {
           // @ts-expect-error
           return child.data.color;
         }}
-        borderColor={{ theme: "background" }}
+        borderWidth={1}
         enableArcLabels={false}
         arcLabelsSkipAngle={10}
       />
