@@ -1,33 +1,28 @@
-import Image from "next/image";
-import { MyResponsiveSunburst, Sidebar } from "./components";
-
-// For AO
-// Home page (/)
-// Community page (/c/)
-// Message page (/m/)
-// Search page (/search)
-// Other (/*)
-// End
-
-// SQL Query to write:
-// Get session_id, page, timestamp group by session_id
-
-// | row 1
-// | row 2
-// | row 3
-
-// for each row in the result of the above query
-// count the page by some regex
+"use client";
+import React, { useState } from "react";
+import {
+  BottomBar,
+  ChartOptions,
+  MyResponsiveSunburst,
+  QueryContext,
+  QueryProvider,
+  Sidebar,
+} from "./components";
 
 export default function Home() {
+  const [query, setQuery] = useState<null | QueryContext>(null);
+  const [chartOptions, setChartOptions] = useState<null | ChartOptions>(null);
   return (
-    <main className="flex min-h-screen flex-row">
-      <Sidebar />
-      <div className="flex-grow flex justify-center items-center">
-        <div className="w-[800px] h-[800px] text-black">
-          <MyResponsiveSunburst />
+    <QueryProvider value={{ query, setQuery, setChartOptions, chartOptions }}>
+      <main className="flex min-h-screen flex-row">
+        <Sidebar />
+        <div className="flex-grow flex-col flex justify-center items-center">
+          <div className="w-[800px] h-[800px] text-black">
+            <MyResponsiveSunburst />
+          </div>
+          <BottomBar />
         </div>
-      </div>
-    </main>
+      </main>
+    </QueryProvider>
   );
 }

@@ -33,4 +33,4 @@ grouped_events as (SELECT
 SELECT concat(arrayStringConcat(path_list, '->'), '->End') AS path_taken, count(*) as count 
 FROM grouped_events 
 group by path_taken 
-order by count desc LIMIT 10000
+order by count desc
