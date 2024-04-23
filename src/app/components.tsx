@@ -89,6 +89,8 @@ function convertToHierarchy(
   return root.children; // Assuming there's only one root node
 }
 import Sketch from "@uiw/react-color-sketch";
+import { DatePickerDemo } from "@/components/ui/date-picker";
+import { format } from "date-fns";
 
 function ColorPicker(props: { initialColor: string; label: string }) {
   const { chartOptions, setChartOptions } = useQueryContext();
@@ -177,9 +179,13 @@ export const MyResponsiveSunburst = () => {
                 query?.match ?? []
               ).map((m) => `'${m.label}'`)}] as groupings_labels,\n[${(
                 query?.match ?? []
-              ).map(
-                (m) => `'${m.regex}'`
-              )}] as groupings_regex,\n'2024-04-14 00:00:00' as start_time,\n'2024-04-21 23:59:59' as end_time,\nraw_events as (SELECT\n                        events.timestamp,\n                        events.$session_id,\n                        ifNull(if(equals(event, '$pageview'), replaceRegexpAll(ifNull(properties.$current_url, ''), '(.)/$', '\\\\1'), event), '') AS path_item_ungrouped,                    \n                        multiMatchAnyIndex(path_item_ungrouped, groupings_regex) AS group_index,\n                        (if(greater(group_index, 0), groupings_labels[group_index], 'Other') AS path_item) AS path_item\n                    FROM\n                        events\n                    WHERE\n                        and(\n                            and(greaterOrEquals(events.timestamp, toStartOfDay(assumeNotNull(toDateTime(start_time)))), \n                                lessOrEquals(events.timestamp, assumeNotNull(toDateTime(end_time)))\n                                ), \n                        equals(event, '$pageview')\n                        )\n                    ORDER BY\n                        $session_id ASC,\n                        events.timestamp ASC\n                    ),\n\ngrouped_events as (SELECT\n                    $session_id,                    \n                    arraySlice(groupArray(path_item), 1 ,lim) AS path_list\n                FROM\n                    raw_events\n                GROUP BY\n                    $session_id)\nSELECT concat(arrayStringConcat(path_list, '->'), '->End') AS path_taken, count(*) as count \nFROM grouped_events \ngroup by path_taken \norder by count desc LIMIT 10000`,
+              ).map((m) => `'${m.regex}'`)}] as groupings_regex,\n'${format(
+                query?.start!,
+                "yyyy-MM-dd"
+              )} 00:00:00' as start_time,\n'${format(
+                query?.end!,
+                "yyyy-MM-dd"
+              )} 23:59:59' as end_time,\nraw_events as (SELECT\n                        events.timestamp,\n                        events.$session_id,\n                        ifNull(if(equals(event, '$pageview'), replaceRegexpAll(ifNull(properties.$current_url, ''), '(.)/$', '\\\\1'), event), '') AS path_item_ungrouped,                    \n                        multiMatchAnyIndex(path_item_ungrouped, groupings_regex) AS group_index,\n                        (if(greater(group_index, 0), groupings_labels[group_index], 'Other') AS path_item) AS path_item\n                    FROM\n                        events\n                    WHERE\n                        and(\n                            and(greaterOrEquals(events.timestamp, toStartOfDay(assumeNotNull(toDateTime(start_time)))), \n                                lessOrEquals(events.timestamp, assumeNotNull(toDateTime(end_time)))\n                                ), \n                        equals(event, '$pageview')\n                        )\n                    ORDER BY\n                        $session_id ASC,\n                        events.timestamp ASC\n                    ),\n\ngrouped_events as (SELECT\n                    $session_id,                    \n                    arraySlice(groupArray(path_item), 1 ,lim) AS path_list\n                FROM\n                    raw_events\n                GROUP BY\n                    $session_id)\nSELECT concat(arrayStringConcat(path_list, '->'), '->End') AS path_taken, count(*) as count \nFROM grouped_events \ngroup by path_taken \norder by count desc LIMIT 10000`,
             },
           }),
         }
@@ -264,6 +270,8 @@ const formSchema = z.object({
   depth: z.number({
     coerce: true,
   }),
+  start: z.date(),
+  end: z.date(),
 });
 
 const matchSchema = z.object({
@@ -382,6 +390,9 @@ export function Sidebar() {
     defaultValues: {
       host: "us.posthog.com",
       depth: 5,
+      // 7 days ago
+      start: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+      end: new Date(),
     },
   });
 
@@ -470,6 +481,42 @@ export function Sidebar() {
                 <FormLabel>Depth</FormLabel>
                 <FormControl>
                   <Input placeholder="5" type="number" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="start"
+            render={({ field }) => (
+              <FormItem className="flex flex-col">
+                <FormLabel>Start</FormLabel>
+                <FormControl>
+                  <DatePickerDemo
+                    onChange={(date) => {
+                      form.setValue("start", date);
+                    }}
+                    date={form.watch("start")}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="depth"
+            render={({ field }) => (
+              <FormItem className="flex flex-col">
+                <FormLabel>End</FormLabel>
+                <FormControl>
+                  <DatePickerDemo
+                    onChange={(date) => {
+                      form.setValue("end", date);
+                    }}
+                    date={form.watch("end")}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
